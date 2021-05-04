@@ -6,106 +6,124 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/show_gif_button"
-        android:layout_width="220dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="220dp"
-        android:background="@color/white"
-        android:text="GIFアニメーションを表示する"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/show_json_button"
-        android:layout_width="220dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="24dp"
-        android:background="@color/white"
-        android:text="jsonアニメーションを表示する"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/show_gif_button" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
 
-    <Button
-        android:id="@+id/show_mp4_button"
-        android:layout_width="220dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="24dp"
-        android:background="@color/white"
-        android:text="mp4アニメーションを表示する"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/show_json_button" />
+            <Button
+                android:id="@+id/show_gif_button"
+                android:layout_width="220dp"
+                android:layout_height="40dp"
+                android:background="@color/white"
+                android:text="GIFアニメーションを表示する"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/show_snack_bar_button"
-        android:layout_width="220dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="24dp"
-        android:background="@color/white"
-        android:text="snack barを表示する"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/show_mp4_button" />
+            <Button
+                android:id="@+id/show_json_button"
+                android:layout_width="220dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="24dp"
+                android:background="@color/white"
+                android:text="jsonアニメーションを表示する"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/show_gif_button" />
 
-    <Button
-        android:id="@+id/show_good_button"
-        android:layout_width="220dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="24dp"
-        android:background="@color/white"
-        android:text="いいねアニメーションを表示する"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/show_snack_bar_button" />
+            <Button
+                android:id="@+id/show_mp4_button"
+                android:layout_width="220dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="24dp"
+                android:background="@color/white"
+                android:text="mp4アニメーションを表示する"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/show_json_button" />
 
-    <VideoView
-        android:id="@+id/video_view"
-        android:layout_width="240dp"
-        android:layout_height="320dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <Button
+                android:id="@+id/show_snack_bar_button"
+                android:layout_width="220dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="24dp"
+                android:background="@color/white"
+                android:text="snack barを表示する"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/show_mp4_button" />
 
-    <ImageView
-        android:id="@+id/image_view"
-        android:layout_width="240dp"
-        android:layout_height="320dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <Button
+                android:id="@+id/show_good_button"
+                android:layout_width="220dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="24dp"
+                android:background="@color/white"
+                android:text="いいねアニメーションを表示する"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/show_snack_bar_button" />
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/lottie_animation_view"
-        android:layout_width="240dp"
-        android:layout_height="320dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        app:lottie_rawRes="@raw/splash_json" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ImageView
-        android:id="@+id/good_image_view"
-        android:layout_width="240dp"
-        android:layout_height="320dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <VideoView
+                android:id="@+id/video_view"
+                android:layout_width="240dp"
+                android:layout_height="320dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/image_view"
+                android:layout_width="240dp"
+                android:layout_height="320dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottie_animation_view"
+                android:layout_width="240dp"
+                android:layout_height="320dp"
+                android:visibility="gone"
+                android:background="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_autoPlay="false"
+                app:lottie_loop="false"
+                app:lottie_rawRes="@raw/splash_json" />
+
+            <ImageView
+                android:id="@+id/good_image_view"
+                android:layout_width="240dp"
+                android:layout_height="320dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

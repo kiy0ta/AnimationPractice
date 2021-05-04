@@ -12,10 +12,10 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        val vv = findViewById<VideoView>(R.id.logo)
-        vv.setOnCompletionListener { mp: MediaPlayer? -> showMainActivity() }
-        vv.setVideoURI(Uri.parse("android.resource://" + packageName + "/" + R.raw.splash_mp4))
-        vv.start()
+        val videoView = findViewById<VideoView>(R.id.logo)
+        videoView.setOnCompletionListener { mp: MediaPlayer? -> showMainActivity() }
+        videoView.setVideoURI(Uri.parse("android.resource://" + packageName + "/" + R.raw.splash_mp4))
+        videoView.start()
     }
 
     private fun showMainActivity() {
