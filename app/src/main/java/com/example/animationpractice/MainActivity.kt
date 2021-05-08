@@ -2,6 +2,7 @@ package com.example.animationpractice
 
 import android.animation.Animator
 import android.animation.Animator.AnimatorListener
+import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.media.MediaPlayer
 import android.net.Uri
@@ -13,6 +14,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.VideoView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.vectordrawable.graphics.drawable.Animatable2Compat
 import com.airbnb.lottie.LottieAnimationView
 import com.bumptech.glide.Glide
@@ -21,8 +23,11 @@ import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.load.resource.gif.GifDrawable
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
+import com.google.android.material.snackbar.Snackbar
+
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
+    private lateinit var constraintLayout: ConstraintLayout
     private lateinit var goodButtonImageView: ImageView
     private lateinit var videoView: VideoView
     private lateinit var imageView: ImageView
@@ -41,6 +46,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         showSnackBarButton.setOnClickListener(this)
         val showGoodButton = findViewById<Button>(R.id.show_good_button)
         showGoodButton.setOnClickListener(this)
+        constraintLayout = findViewById(R.id.constraint_layout)
         goodButtonImageView = findViewById(R.id.good_button)
         videoView = findViewById(R.id.video_view)
         imageView = findViewById(R.id.image_view)
@@ -143,6 +149,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun showSnackBarAnimation() {
+        // 今回はconstraintLayoutなのでスワイプは省略
+        val snackBar = Snackbar.make(
+            constraintLayout, // findViewById(R.id.constraint_layout)でもOK
+            "メッセージが届きました！",// R.string.email_sentでもOK
+            Snackbar.LENGTH_SHORT
+        )
+        snackBar.view.setBackgroundColor(Color.rgb(32, 125, 98))
+        snackBar.show()
     }
 
     private fun showGoodAnimation() {
