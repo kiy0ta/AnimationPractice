@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.airbnb.lottie.LottieAnimationView
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
+    private lateinit var goodButtonImageView: ImageView
     private lateinit var videoView: VideoView
     private lateinit var imageView: ImageView
     private lateinit var lottieAnimationView: LottieAnimationView
@@ -32,6 +33,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         showSnackBarButton.setOnClickListener(this)
         val showGoodButton = findViewById<Button>(R.id.show_good_button)
         showGoodButton.setOnClickListener(this)
+        goodButtonImageView = findViewById(R.id.good_button)
         videoView = findViewById(R.id.video_view)
         imageView = findViewById(R.id.image_view)
         lottieAnimationView = findViewById(R.id.lottie_animation_view)
@@ -95,5 +97,21 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun showGoodAnimation() {
+        goodButtonImageView
+            .animate()
+            .scaleX(1.4f)
+            .scaleY(1.4f)
+            .setDuration(225)
+            .alpha(1f)
+            .withEndAction {
+                goodButtonImageView
+                    .animate()
+                    .setDuration(60)
+                    .scaleX(1f)
+                    .scaleY(1f)
+                    .alpha(1f)
+                    .start()
+            }
+            .start()
     }
 }
